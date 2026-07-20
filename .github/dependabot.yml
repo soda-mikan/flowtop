@@ -5,11 +5,23 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      userspace-patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
   - package-ecosystem: cargo
     directory: "/flowtop-ebpf"
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      ebpf-patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
