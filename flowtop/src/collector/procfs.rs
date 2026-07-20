@@ -252,8 +252,8 @@ pub fn parse_net_dev(
         rx = rx.saturating_add(interface_rx);
         tx = tx.saturating_add(interface_tx);
     }
-    if selected.is_some() && !matched {
-        bail!("interface {} not found in /proc/net/dev", selected.unwrap());
+    if !matched && let Some(selected) = selected {
+        bail!("interface {selected} not found in /proc/net/dev");
     }
     Ok((rx, tx))
 }
