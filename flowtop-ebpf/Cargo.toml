@@ -1,0 +1,23 @@
+[package]
+name = "flowtop-ebpf"
+version = "0.0.1-beta"
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+repository = "https://github.com/soda-mikan/flowtop"
+
+[dependencies]
+aya-ebpf = "0.2.1"
+flowtop-common = { path = "../flowtop-common", default-features = false }
+
+[[bin]]
+name = "flowtop-ebpf"
+path = "src/main.rs"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1

@@ -1,0 +1,15 @@
+/target/
+/flowtop-ebpf/target/
+*.jsonl
+*.csv
+*.o
+.DS_Store
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.log
+.idea/
+.vscode/
